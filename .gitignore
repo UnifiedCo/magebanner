@@ -1,0 +1,47 @@
+# Ignore all not in app & skin
+/*
+!.gitignore
+!/app/
+
+# Ignore all in app, except code & etc
+# Ignore all in app/code except /local/{company}
+/app/*
+!/app/code/
+!/app/etc/
+!/app/design/
+
+# Ignore all in app/code/local except {company}
+/app/code/core
+/app/code/community
+#/app/code/local/*
+# use lines below if you have multiple company extensions
+# and want to just commit a specific one
+/app/code/local/LogicSpot/*
+!app/code/local/LogicSpot/BannerManager
+
+# Ignore all of app/etc except our specific module files
+/app/etc/*
+!/app/etc/modules/
+/app/etc/modules/*
+!/app/etc/modules/LogicSpot_BannerManager.xml
+
+#Ignore all of app/design except for our files
+/app/design/*
+!app/design/frontend/
+!app/design/adminhtml/
+/app/design/frontend/*
+!/app/design/frontend/base/
+/app/design/frontend/base/default/etc/
+/app/design/frontend/base/default/template/*
+!/app/design/frontend/base/default/template/bannermanager/
+/app/design/frontend/base/default/layout/*
+!/app/design/frontend/base/default/layout/bannermanager/*
+/app/design/adminhtml/*
+!/app/design/adminhtml/default/
+/app/design/adminhtml/default/find/
+/app/design/adminhtml/default/default/etc/
+/app/design/adminhtml/default/default/locale/
+/app/design/adminhtml/default/default/template/*
+!/app/design/adminhtml/default/default/template/bannermanager/
+/app/design/adminhtml/default/default/layout/*
+!/app/design/adminhtml/default/default/layout/bannermanager.xml
