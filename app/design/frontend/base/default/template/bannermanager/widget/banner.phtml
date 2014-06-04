@@ -1,0 +1,9 @@
+<?php
+if($banner = $this->getBanner()){
+?>
+	<a href="<?php echo $banner->getLink(); ?>">
+		<img src="<?php echo $banner->getImage(); ?>" alt="<?php echo $banner->getTitle(); ?>">
+	</a>
+<?php
+}
+?>

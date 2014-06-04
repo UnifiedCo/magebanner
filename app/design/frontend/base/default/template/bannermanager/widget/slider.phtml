@@ -1,0 +1,31 @@
+<?php
+	$bannerGroup = $this->setBannerGroupData($this->getData('banner_group'));
+	$banners = $this->getCollection();
+	echo "hello";
+	if(count($banners) && $bannerGroup)
+	{
+		$bannerGroupIdentifier = $bannerGroup->getIdentifier();
+?>
+<div class="slider <?php echo $bannerGroupIdentifier; ?>">
+<?php
+		foreach($banners as $banner)
+		{
+?>
+    <img src="<?php echo $banner->getImage(); ?>" />
+<?php
+		}
+?>
+</div>
+<?php 
+	if($bannerGroup->getInitScript())
+	{
+?>
+<script type="text/javascript">
+	<?php echo $bannerGroup->getInitScript(); ?>
+</script>
+<?php
+	}
+?>
+<?php
+	}
+?>

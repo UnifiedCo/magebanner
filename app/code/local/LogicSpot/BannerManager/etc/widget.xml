@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<widgets>
+    <bannermanager_slider type="bannermanager/widget_slider">
+        <name>Banners: Slider</name>
+        <description type="desc">Adds a slider or banner group.</description>
+		<parameters>
+			<banner_group>
+				<label>Banner Group</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>select</type>
+				<source_model>LogicSpot_BannerManager_Adminhtml_Model_System_Config_Source_Groups</source_model>
+			</banner_group>
+			<template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <value>bannermanager/widget/slider.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>bannermanager/widget/slider.phtml</value>
+                        <label>Slider Layout</label>
+                    </default>
+                </values>
+            </template>
+		</parameters>
+    </bannermanager_slider>
+    <bannermanager_banner type="bannermanager/widget_banner">
+        <name>Banners: Single Banner</name>
+        <description type="desc">Adds a single banner image to your page, if the banner is not longer active it won't display.</description>
+		<parameters>
+			<banner_single>
+				<label>Banner</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>select</type>
+				<source_model>LogicSpot_BannerManager_Adminhtml_Model_System_Config_Source_Banners</source_model>
+			</banner_single>
+			<template>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Template</label>
+                <type>select</type>
+                <value>bannermanager/widget/banner.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>bannermanager/widget/banner.phtml</value>
+                        <label>Single Banner Layout</label>
+                    </default>
+                </values>
+            </template>
+		</parameters>
+    </bannermanager_banner>
+</widgets>

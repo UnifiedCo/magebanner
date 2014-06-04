@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<logicspot translate="title" module="bannermanager">
+										<title>LogicSpot Section</title>
+										<sort_order>100</sort_order>
+									</logicspot>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

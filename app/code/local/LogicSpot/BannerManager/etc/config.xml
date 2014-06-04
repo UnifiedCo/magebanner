@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<LogicSpot_BannerManager>
+			<version>0.1.0</version>
+		</LogicSpot_BannerManager>
+	</modules>
+	<frontend>
+		<routers>
+			<bannermanager>
+				<use>standard</use>
+					<args>
+						<module>LogicSpot_BannerManager</module>
+						<frontName>bannermanager</frontName>
+					</args>
+			</bannermanager>
+		</routers>
+		<layout>
+			<updates>
+				<bannermanager>
+					<file>bannermanager.xml</file>
+				</bannermanager>
+			</updates>
+		</layout>
+	</frontend>
+	<global>
+		<helpers>
+			<bannermanager>
+				<class>LogicSpot_BannerManager_Helper</class>
+			</bannermanager>
+		</helpers>
+		<blocks>
+			<bannermanager>
+				<class>LogicSpot_BannerManager_Block</class>
+			</bannermanager>
+		</blocks>
+		<models>
+			<bannermanager_adminhtml>
+				<class>LogicSpot_BannerManager_Adminhtml_Model</class>
+			</bannermanager_adminhtml>
+			<bannermanager>
+				<class>LogicSpot_BannerManager_Model</class>
+				<resourceModel>bannermanager_mysql4</resourceModel>
+			</bannermanager>
+			<bannermanager_mysql4>
+				<class>LogicSpot_BannerManager_Model_Mysql4</class>
+				<entities>		  
+					<banner>
+						<table>bannermanager_banner</table>
+					</banner>		  
+					<group>
+						<table>bannermanager_group</table>
+					</group>
+				</entities>
+			</bannermanager_mysql4>
+		</models>
+		<resources>
+			<bannermanager_setup>
+				<setup>
+					<module>LogicSpot_BannerManager</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</bannermanager_setup>
+			<bannermanager_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</bannermanager_write>
+			<bannermanager_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</bannermanager_read>
+		</resources>
+	</global>
+	<admin>
+		<routers>
+			<bannermanager>
+				<use>admin</use>
+				<args>
+					<module>LogicSpot_BannerManager</module>
+					<frontName>bannermanager</frontName>
+				</args>
+			</bannermanager>
+		</routers>
+	</admin>
+	<adminhtml>
+		<menu>
+			<cms>
+				<children>
+					<bannermanager module="bannermanager">
+						<title>Banner Manager</title>
+						<sort_order>100</sort_order>
+						<children>
+							<!--<bannermanagerbackend module="bannermanager">
+								<title>Backend Page Title</title>
+								<sort_order>0</sort_order>
+								<action>bannermanager/adminhtml_bannermanagerbackend</action>
+							</bannermanagerbackend>-->
+							<banner module="bannermanager">
+								<title>Manage Banners</title>
+								<sort_order>0</sort_order>
+								<action>bannermanager/adminhtml_banner</action>
+							</banner>
+							<group module="bannermanager">
+								<title>Manage Groups</title>
+								<sort_order>10</sort_order>
+								<action>bannermanager/adminhtml_group</action>
+							</group>
+						</children>
+					</bannermanager>
+				</children>
+			</cms>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<bannermanager translate="title" module="bannermanager">
+							<title>BannerManager</title>
+							<sort_order>1000</sort_order>
+							<children>
+								<bannermanagerbackend translate="title">
+									<title>Backend Page Title</title>
+								</bannermanagerbackend>
+								<banner translate="title">
+									<title>Manage Banner</title>
+									<sort_order>0</sort_order>
+								</banner>
+								<group translate="title">
+									<title>Manage Group</title>
+									<sort_order>10</sort_order>
+								</group>
+							</children>
+						</bannermanager>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<bannermanager>
+					<file>bannermanager.xml</file>
+				</bannermanager>
+			</updates>
+		</layout>
+	</adminhtml>
+</config> 

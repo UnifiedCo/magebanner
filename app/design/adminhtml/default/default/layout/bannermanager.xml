@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addJs"><file>jscolor/jscolor.js</file></action>
+		</reference>
+	</default>
+	<bannermanager_adminhtml_bannermanagerbackend_index>
+		<reference name="content">
+			<block type="bannermanager/adminhtml_bannermanagerbackend" name="bannermanagerbackend" template="bannermanager/bannermanagerbackend.phtml"/>
+		</reference>
+	</bannermanager_adminhtml_bannermanagerbackend_index>
+	<bannermanager_adminhtml_banner_index>
+		<reference name="content">
+			<block type="bannermanager/adminhtml_banner" name="banner" />
+		</reference>
+	</bannermanager_adminhtml_banner_index>
+	<bannermanager_adminhtml_group_index>
+		<reference name="content">
+			<block type="bannermanager/adminhtml_group" name="group" />
+		</reference>
+	</bannermanager_adminhtml_group_index>
+</layout>
