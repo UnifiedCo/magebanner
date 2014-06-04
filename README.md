@@ -1,0 +1,4 @@
+magebanner
+==========
+
+Magento Banner Manager
