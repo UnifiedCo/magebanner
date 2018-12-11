@@ -122,7 +122,7 @@ class LogicSpot_BannerManager_Adminhtml_BannerController extends Mage_Adminhtml_
 											$io->rm(Mage::getBaseDir('media') . DS . implode(DS,explode('/',$model->getData('image'))));	
 									}
 								}
-								$path = Mage::getBaseDir('media') . DS . 'bannermanager' . DS . 'banner' . DS;
+								$path = Mage::getBaseDir('media') . DS . 'logicspot' . DS . 'banner' . DS;
 								$uploader = new Varien_File_Uploader('image');
 								$uploader->setAllowedExtensions(array('jpg','jpeg','png','gif'));
 								$uploader->setAllowRenameFiles(false);
@@ -130,7 +130,7 @@ class LogicSpot_BannerManager_Adminhtml_BannerController extends Mage_Adminhtml_
 								$destFile = $path . str_replace(' ', '_', preg_replace('/[^A-Za-z0-9\-.]/', '', $_FILES['image']['name']));
 								$filename = $uploader->getNewFileName($destFile);
 								$uploader->save($path, $filename);
-								$post_data['image']='bannermanager/banner/'.$filename;
+								$post_data['image']='logicspot/banner/'.$filename;
 							}
 						}
 					}else{
